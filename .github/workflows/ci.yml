@@ -8,4 +8,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: kayahr/npm-build-action@v1
+      - uses: kayahr/npm-build-action@93b04d67e06cfe75df1a7ee15c4beb4b28a3e043
