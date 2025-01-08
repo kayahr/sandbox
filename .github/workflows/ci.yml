@@ -21,7 +21,7 @@ jobs:
       - name: Build API Doc
         run: npm run apidoc
       - name: Deploy API Doc
-        if: github.ref == "refs/heads/main"
+        if: github.ref == 'refs/heads/main'
         uses: kayahr/deploy-github-pages-action@v1
         with:
           path: doc
