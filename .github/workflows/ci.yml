@@ -5,7 +5,21 @@ permissions:
   pages: write
   id-token: write
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: kayahr/npm-build-action@93b04d67e06cfe75df1a7ee15c4beb4b28a3e043
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Build
+        run: npm ci
+      - name: Test
+        run: npm test
+      - name: Build API Doc
+        run: npm run apidoc
+      - name: Deploy API Doc
+        uses: kayahr/deploy-github-pages-action@v1
+        with:
+          node-version: "doc"

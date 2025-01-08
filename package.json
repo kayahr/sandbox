@@ -7,6 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"testing\""
+    "test": "echo \"testing\"",
+    "apidoc": "echo \"create api doc\""
   }
 }
