@@ -8,17 +8,17 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-      - name: Build
+      - name: Build project
         run: npm ci
-      - name: Test
+      - name: Run tests
         run: npm test
-      - name: Build API Doc
+      - name: Create API Doc
         run: npm run apidoc
       - name: Deploy API Doc
         if: github.ref == 'refs/heads/main'
