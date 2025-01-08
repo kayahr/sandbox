@@ -22,4 +22,4 @@ jobs:
       - name: Deploy API Doc
         uses: kayahr/deploy-github-pages-action@v1
         with:
-          node-version: "doc"
+          path: "doc"
