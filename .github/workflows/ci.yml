@@ -8,7 +8,8 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -20,6 +21,7 @@ jobs:
       - name: Build API Doc
         run: npm run apidoc
       - name: Deploy API Doc
+        if: github.ref == refs/heads/main
         uses: kayahr/deploy-github-pages-action@v1
         with:
-          path: "doc"
+          path: doc
